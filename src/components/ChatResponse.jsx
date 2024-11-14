@@ -1,13 +1,10 @@
 
 export default function ChatResponse({ response }) {
     return (
-        <div className="flex flex-col items-center">
-            <h1 className="text-3xl font-bold underline">
-                The flower is:
+        <div className="flex flex-row items-center">
+            <h1 className="text-3xl font-bold ">
+                The flower is: <span>{response}</span>
             </h1>
-            <p className="text-lg font-bold">
-                {response}
-            </p>
         </div>
     )
 }
