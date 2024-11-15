@@ -7,10 +7,12 @@ import {Button} from "@/components/ui/button.jsx";
 export default function App() {
     const [URL, setURL] = useState(null);
     const [response, setResponse] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
-        /* COMMENT DET HER UD NÅR DET IKKE ER TEST LÆNGERE
+        setLoading(true);
+
         fetch("http://localhost:8080/identify", {
             method: "POST",
             headers: {
@@ -21,9 +23,10 @@ export default function App() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
+                setLoading(false);
                 setResponse(data.Choices[0].message.content);
-            })*/
-        setResponse("Red rose")
+            })
+        //setResponse("Red rose") for test
     }
 
 
@@ -34,7 +37,7 @@ export default function App() {
                 <Title/>
                 <Input className={"w-1/2 my-2 "} type={"url"} placeholder={"URL"}
                        onChange={(e) => setURL(e.target.value)} required/>
-
+                {loading && <p className={"font-mono font-bold text-[#262626]"}>Loading...</p>}
                 <Button className="mt-5" variant={"outline"} type={"submit"}>Identify</Button>
                 {response && <ChatResponse response={response}/>}
             </form>
