@@ -27,12 +27,13 @@ export default function App() {
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit} className="flex flex-col h-svh justify-center items-center">
+        <div className="h-screen w-full bg-[radial-gradient(circle,_#9DB394,_#718F66,_#5E7755)]">
+            <form onSubmit={handleSubmit} className="flex flex-col h-svh items-center">
                 <Title/>
                 <Input className={"w-1/2 my-2 "} type={"url"} placeholder={"URL"}
                        onChange={(e) => setURL(e.target.value)} required/>
-                <Button variant={"outline"} type={"submit"}>Submit</Button>
+
+                <Button className="mt-5" variant={"outline"} type={"submit"}>Identify</Button>
                 {response && <ChatResponse response={response}/>}
             </form>
 
