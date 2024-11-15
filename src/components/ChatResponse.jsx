@@ -7,7 +7,12 @@ export default function ChatResponse({ response }) {
             <h1 className="text-2xl font-bold ">
                 The flower is: <span>{response}</span>
             </h1>
+
+
         </div>
 
     )
 }
+
+
+

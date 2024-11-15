@@ -26,6 +26,8 @@ export default function App() {
         setResponse("Red rose")
     }
 
+
+    //HTML SIDE
     return (
         <div className="h-screen w-full bg-[radial-gradient(circle,_#9DB394,_#718F66,_#5E7755)]">
             <form onSubmit={handleSubmit} className="flex flex-col h-svh items-center">
@@ -36,8 +38,7 @@ export default function App() {
                 <Button className="mt-5" variant={"outline"} type={"submit"}>Identify</Button>
                 {response && <ChatResponse response={response}/>}
             </form>
-
-        </>
+        </div>
 
     )
 }
